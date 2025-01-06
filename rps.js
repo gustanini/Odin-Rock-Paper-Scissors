@@ -57,19 +57,6 @@ function printWinner(user, machine) {
     }
 }
 
-// game intro
-console.log("Welcome to Rock-Paper-Scissors!\n");
-console.log("Enter a number to select your weapon:\n");
-
-// input user choice
-let user; // read from input
-
-// create readline interface to receive input
-const readline = require("readline").createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
-
 // Prompt the user
 /**
  * Main algorithm.
@@ -101,6 +88,16 @@ function playGame() {
         }
     });
 }
+
+// game intro
+console.log("Welcome to Rock-Paper-Scissors!\n");
+console.log("Enter a number to select your weapon:\n");
+
+// create readline interface to receive input
+const readline = require("readline").createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
 
 // Start the game
 playGame();
