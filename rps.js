@@ -46,7 +46,11 @@ function printWinner(user, machine) {
     }
     // check if user's number is bigger than machine number
     // if user - machine is 2, then machine is rock and user is scissors
-    else if (user >= machine && user - machine != 2) {
+    else if (
+        (user === 0 && machine === 2) || // Rock beats Scissors
+        (user === 1 && machine === 0) || // Paper beats Rock
+        (user === 2 && machine === 1)    // Scissors beats Paper
+    ) {
         console.log("You win!");
     }
     else {
@@ -54,11 +58,10 @@ function printWinner(user, machine) {
     }
 }
 
-// prompt user to input a number from 0-2
-console.log("Welcome! Select your weapon:");
-console.log("Rock         =       0");
-console.log("Paper        =       1");
-console.log("Scissor      =       2");
+// game intro
+console.log("Welcome to Rock-Paper-Scissors!");
+console.log("Enter a number to select your weapon:");
+console.log("0: Rock, 1: Paper, 2: Scissors");
 
 // input user choice
 let user; // read from input
