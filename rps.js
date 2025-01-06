@@ -67,7 +67,22 @@ console.log("0: Rock, 1: Paper, 2: Scissors");
 let user; // read from input
 // loop until user understands that only 0,1,2 are valid inputs
 while (true) {
-    user = prompt("Make your selection."); 
+    const readline = require("readline").createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    readline.question("Make your selection (0, 1, or 2): ", (input) => {
+        user = Number(input);
+        if (validateInput(user)) {
+            console.log("Valid input:", user);
+            // Continue game logic here
+        } else {
+            console.log("Invalid input");
+        }
+        readline.close();
+    });
+
     if (validateInput(user)) {
         user = Number(user); // Convert valid input to a number
         break;
