@@ -52,6 +52,8 @@ Welcome to Rock-Paper-Scissors!
 Your selection (0: Rock, 1: Paper, 2: Scissors): 
 ```
 
+![Welcome Screen](/examples/welcome-screen.png)
+
 2. **Select Your Weapon:**
 
 - Enter `0`, `1`, or `2` as prompted:
@@ -59,6 +61,8 @@ Your selection (0: Rock, 1: Paper, 2: Scissors):
 ```
 Your selection (0: Rock, 1: Paper, 2: Scissors): 0
 ```
+
+![User Input](/examples/user-input.png)
 
 3. **View the Results:**
 
@@ -71,7 +75,11 @@ Opponent's selection: Scissors
 You win!
 ```
 
+![Results](/examples/results.png)
+
 - If you enter anything other than `0`, `1`, or `2`, the program will prompt you to try again:
+
+![Invalid Input](/examples/invalid-input.png)
 
 ```
 Invalid input. Please enter 0, 1, or 2.
