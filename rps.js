@@ -59,9 +59,8 @@ function printWinner(user, machine) {
 }
 
 // game intro
-console.log("Welcome to Rock-Paper-Scissors!");
-console.log("Enter a number to select your weapon:");
-console.log("0: Rock, 1: Paper, 2: Scissors");
+console.log("Welcome to Rock-Paper-Scissors!\n");
+console.log("Enter a number to select your weapon:\n");
 
 // input user choice
 let user; // read from input
@@ -74,13 +73,14 @@ const readline = require("readline").createInterface({
 
 // Prompt the user
 function playGame() {
-    readline.question("Make your selection (0, 1, or 2): ", (input) => {
+    readline.question("Your selection (0: Rock, 1: Paper, 2: Scissors): ", (input) => {
         if (validateInput(input)) {
             const user = Number(input); // Convert valid input to a number
             const machine = randomInt(); // Generate machine choice
-
+            console.log(``);
             console.log(`Your selection: ${rps[user]}`);
             console.log(`Opponent's selection: ${rps[machine]}`);
+            console.log(``);
             printWinner(user, machine);
 
             readline.close(); // Close the readline interface
