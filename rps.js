@@ -29,8 +29,7 @@ function validateInput(user){
 }
 
 /**
- * Main algorithm. 
- * Compares user and machine numbers to determine a winner using simple arithmetics.
+  * Compares user and machine numbers to determine a winner using simple arithmetics.
  * 
  * @function
  * @name findWinner
@@ -72,6 +71,18 @@ const readline = require("readline").createInterface({
 });
 
 // Prompt the user
+/**
+ * Main algorithm.
+ * Receives player input using readline.question.
+ * Validates player input using validateInput.
+ * Sets player and machine selections
+ * Prints a winner using printWinner
+ * 
+ * @function
+ * @name playGame
+ * @kind function
+ * @returns {void}
+ */
 function playGame() {
     readline.question("Your selection (0: Rock, 1: Paper, 2: Scissors): ", (input) => {
         if (validateInput(input)) {
