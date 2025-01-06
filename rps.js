@@ -25,7 +25,7 @@ function randomInt() {
  */
 function validateInput(user){
     // convert input to number and check if it's within 0..2
-    return !isNaN(user) && [0,1,2].includes(Number(input));
+    return !isNaN(user) && [0,1,2].includes(Number(user));
 }
 
 /**
@@ -83,7 +83,7 @@ function playGame() {
             console.log(`Opponent's selection: ${rps[machine]}`);
             printWinner(user, machine);
 
-            rl.close(); // Close the readline interface
+            readline.close(); // Close the readline interface
         } else {
             console.log("Invalid input. Please enter 0, 1, or 2.");
             playGame(); // Retry input
