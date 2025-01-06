@@ -65,36 +65,31 @@ console.log("0: Rock, 1: Paper, 2: Scissors");
 
 // input user choice
 let user; // read from input
-// loop until user understands that only 0,1,2 are valid inputs
-while (true) {
-    const readline = require("readline").createInterface({
-        input: process.stdin,
-        output: process.stdout,
-    });
 
+// create readline interface to receive input
+const readline = require("readline").createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
+
+// Prompt the user
+function playGame() {
     readline.question("Make your selection (0, 1, or 2): ", (input) => {
-        user = Number(input);
-        if (validateInput(user)) {
-            console.log("Valid input:", user);
-            // Continue game logic here
+        if (validateInput(input)) {
+            const user = Number(input); // Convert valid input to a number
+            const machine = randomInt(); // Generate machine choice
+
+            console.log(`Your selection: ${rps[user]}`);
+            console.log(`Opponent's selection: ${rps[machine]}`);
+            printWinner(user, machine);
+
+            rl.close(); // Close the readline interface
         } else {
-            console.log("Invalid input");
+            console.log("Invalid input. Please enter 0, 1, or 2.");
+            playGame(); // Retry input
         }
-        readline.close();
     });
-
-    if (validateInput(user)) {
-        user = Number(user); // Convert valid input to a number
-        break;
-    }
-    else {
-        console.log("Invalid input. Enter 0, 1, or 2.");
-    }
 }
-// generate machine choice
-const machine = randomInt(); 
-// print selections
-console.log(`Your selection: ${rps[user]}`);
-console.log(`Opponent's selection: ${rps[machine]}`);
 
-printWinner(user, machine);
+// Start the game
+playGame();
