@@ -16,3 +16,9 @@
     flex-wrap: wrap;
     gap: 4em;
 }
+.container-2 {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    color: #333;
+}

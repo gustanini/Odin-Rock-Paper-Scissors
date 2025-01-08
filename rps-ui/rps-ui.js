@@ -20,7 +20,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection){
     // bigger number wins
     if (playerSelection === computerSelection) {
-        return "It's a tie!";
+        return `It's a tie! ${playerSelection} vs ${computerSelection}`;
     }
     // player wins
     else if (
@@ -56,7 +56,7 @@ function handlePlayerSelection(playerSelection){
     if (playerScore === 5 || computerScore === 5){
         // if player score is 5, player=winner; else computer=winner
         const winner = playerScore === 5 ? "Player" : "Computer";
-        resultsContainer.textContent += `${winner} wins the game!`
+        resultsContainer.textContent = `${winner} wins the game!`
         
         // reset
         playerScore = 0;
