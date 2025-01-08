@@ -20,22 +20,22 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection){
     // bigger number wins
     if (playerSelection === computerSelection) {
-        console.log("It's a tie!");
+        return "It's a tie!";
     }
     // player wins
     else if (
-        (playerSelection === 0 && computerSelection === 2) || // Rock beats Scissors
-        (playerSelection === 1 && computerSelection === 0) || // Paper beats Rock
-        (playerSelection === 2 && computerSelection === 1)    // Scissors beats Paper
+        (playerSelection === "Rock" && computerSelection === "Scissors") || // Rock beats Scissors
+        (playerSelection === "Paper" && computerSelection === "Rock") || // Paper beats Rock
+        (playerSelection === "Scissors" && computerSelection === "Paper")    // Scissors beats Paper
     ) {
         // add to playerScore
         playerScore++;
-        console.log(`You win! ${playerSelection} beats ${computerSelection}!`);
+        return `You win! ${playerSelection} beats ${computerSelection}!`;
     }
     else {
         // add to computerScore
         computerScore++;
-        console.log(`Opponent wins! ${computerSelection} beats ${playerSelection}!`);
+        return `Opponent wins! ${computerSelection} beats ${playerSelection}!`;
     }
 }
 
@@ -65,3 +65,6 @@ function handlePlayerSelection(playerSelection){
 }
 
 // Add event listeners to buttons
+rockButton.addEventListener("click", () => handlePlayerSelection("Rock"));
+paperButton.addEventListener("click", () => handlePlayerSelection("Paper"));
+scissorsButton.addEventListener("click", () => handlePlayerSelection("Scissors"));
