@@ -70,7 +70,7 @@ function printWinner(user, machine) {
  * @kind function
  * @returns {void}
  */
-function playGame() {
+function playGame() {                                                                           // TO-DO: add 5 rounds, the player with most points win
     readline.question("Your selection (0: Rock, 1: Paper, 2: Scissors): ", (input) => {
         if (validateInput(input)) {
             const user = Number(input); // Convert valid input to a number
