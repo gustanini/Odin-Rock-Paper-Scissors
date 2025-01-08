@@ -94,6 +94,6 @@ Invalid input. Please enter 0, 1, or 2.
 
 ### Create a graphical user interface (GUI)
 
-- [ ] Create three buttons, one for each selection. Add an event listener to the buttons that call your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
-- [ ] Add a div for displaying results and change all of your console.logs into DOM methods.
-- [ ] Display the running score, and announce a winner of the game once one player reaches 5 points.
+- [x] Create three buttons, one for each selection. Add an event listener to the buttons that call your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
+- [x] Add a div for displaying results and change all of your console.logs into DOM methods.
+- [x] Display the running score, and announce a winner of the game once one player reaches 5 points.
