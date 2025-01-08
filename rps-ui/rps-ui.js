@@ -40,5 +40,28 @@ function playRound(playerSelection, computerSelection){
 }
 
 // Function to handle button clicks
+function handlePlayerSelection(playerSelection){
+    // get computer choice and play round
+    const computerSelection = getComputerChoice();
+    const result = playRound(playerSelection, computerSelection);
+
+    // update results in DOM
+    resultsContainer.innerHTML = `
+        <p>${result}</p>
+        <p>Player Score: ${playerScore}</p>
+        <p>Computer Score: ${computerScore}</p>
+    `;
+
+    // check for winner
+    if (playerScore === 5 || computerScore === 5){
+        // if player score is 5, player=winner; else computer=winner
+        const winner = playerScore === 5 ? "Player" : "Computer";
+        resultsContainer.textContent += `${winner} wins the game!`
+        
+        // reset
+        playerScore = 0;
+        computerScore = 0;
+    }
+}
 
 // Add event listeners to buttons
