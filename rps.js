@@ -29,7 +29,7 @@ function validateInput(user){
 }
 
 /**
-  * Compares user and machine numbers to determine a winner using simple arithmetics.
+  * Compares user and machine numbers to determine a winner.
  * 
  * @function
  * @name findWinner
