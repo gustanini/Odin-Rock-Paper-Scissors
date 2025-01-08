@@ -1,22 +1,27 @@
-// Get references to buttons and result container
-const rockButton = document.querySelector(".rock");
-const paperButton = document.querySelector(".paper");
-const scissorsButton = document.querySelector(".scissors");
-const resultsContainer = document.querySelector(".container-2");
-
-// rps choices array
-const rps = ["Rock", "Paper", "Scissors"];
-
-// Initialize scores
-let playerScore = 0;
-let computerScore = 0;
-
-// Function to get computer's selection
+/**
+ * Function to get computer's selection.
+ * Generates a random number 0..2 to select from rps array.
+ * 
+ * @function
+ * @name getComputerChoice
+ * @kind function
+ * @returns {string}
+ */
 function getComputerChoice() {
     return rps[Math.floor(Math.random() * 3)];
 }
 
-// Function to determine the winner of a round
+/**
+ * Function to determine the winner of a round.
+ * Compares both player's selections and increments score variables.
+ * 
+ * @function
+ * @name playRound
+ * @kind function
+ * @param {any} playerSelection
+ * @param {any} computerSelection
+ * @returns {string}
+ */
 function playRound(playerSelection, computerSelection){
     // bigger number wins
     if (playerSelection === computerSelection) {
@@ -39,7 +44,20 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-// Function to handle button clicks
+
+/**
+ * Function to handle button clicks.
+ * Plays rounds after player clicks his selection.
+ * Updates DOM to display round results.
+ * Checks for a winner each round and resets scoreboard.
+ * 
+ * 
+ * @function
+ * @name handlePlayerSelection
+ * @kind function
+ * @param {any} playerSelection
+ * @returns {void}
+ */
 function handlePlayerSelection(playerSelection){
     // get computer choice and play round
     const computerSelection = getComputerChoice();
@@ -63,6 +81,19 @@ function handlePlayerSelection(playerSelection){
         computerScore = 0;
     }
 }
+
+// Get references to buttons and result container
+const rockButton = document.querySelector(".rock");
+const paperButton = document.querySelector(".paper");
+const scissorsButton = document.querySelector(".scissors");
+const resultsContainer = document.querySelector(".container-2");
+
+// rps choices array
+const rps = ["Rock", "Paper", "Scissors"];
+
+// Initialize scores
+let playerScore = 0;
+let computerScore = 0;
 
 // Add event listeners to buttons
 rockButton.addEventListener("click", () => handlePlayerSelection("Rock"));

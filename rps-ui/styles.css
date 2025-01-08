@@ -17,6 +17,8 @@
     gap: 4em;
 }
 .container-2 {
+    display: flex;
+    flex-direction: column;
     margin-top: 20px;
     font-size: 1.2em;
     text-align: center;
