@@ -11,7 +11,7 @@ const rps = ["Rock", "Paper", "Scissors"];
  * @returns {number}
  */
 function randomInt() { 
-    return Math.floor(Math.random() * (2 - 0 + 1) + 0);
+    return Math.floor(Math.random() * 3);
 }
 
 /**
